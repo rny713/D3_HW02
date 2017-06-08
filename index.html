@@ -28,6 +28,59 @@
             .append("svg")
             .attr({
                 "width": 800,
+                "height": 200,
+                "id": "note"
+            });
+
+        svg.append("rect")
+            .attr({
+                "width": 300,
+                "height": 200,
+                "fill": "#FDF5E6",
+            });
+
+        svg.append("circle")
+            .attr({
+                "cx": 150,
+                "cy": 120,
+                "r": 15,
+            });
+        svg.append("rect")
+            .attr({
+                "x": 160,
+                "y": 45,
+                "width": 5,
+                "height": 78,
+            });
+
+        for (var i = 0; i < 5; i = i + 1) {
+            svg.append("line")
+                .attr({
+                    "x1": 0,
+                    "y1": 45 + 30 * i,
+                    "x2": 300,
+                    "y2": 45 + 30 * i,
+                    "stroke": "black",
+                    "stroke-width": 2,
+                });
+        }
+        svg.append("text")
+            .attr({
+                "x": 135,
+                "y": 50 + 30 * 5,
+                "font-size": 40,
+                "font-family": "arial",
+            })
+            .text("A");
+    </script>
+
+    <hr size="5px" color="black">
+
+    <script>
+        var svg = d3.select("body")
+            .append("svg")
+            .attr({
+                "width": 800,
                 "height": 300,
                 "id": "BarChart"
             });
