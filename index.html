@@ -21,6 +21,95 @@
         }
     </script>
 
+    <hr size="5px" color="black">
+
+    <script>
+        var svg = d3.select("body")
+            .append("svg")
+            .attr({
+                "width": 800,
+                "height": 300,
+                "id": "BarChart"
+            });
+
+
+        for (var i = 0; i < 20; i = i + 1) {
+            var num = random(20, 300);
+
+            svg.append("rect")
+                .attr({
+                    "x": 10,
+                    "y": 10 + 12 * i,
+                    "width": num,
+                    "height": 10,
+                    "fill": "red"
+                });
+            svg.append("text")
+                .attr({
+                    "x": num + 15,
+                    "y": 20 + 12 * i,
+                    "font-size": 12,
+                })
+                .text(num);
+
+        }
+    </script>
+
+    <hr size="5px" color="black">
+
+    <script>
+        var svg = d3.select("body")
+            .append("svg")
+            .attr({
+                "width": 800,
+                "height": 600,
+                "id": "polyline"
+            });
+
+        var last_num = 0
+        for (var i = 0; i < 20; i = i + 1) {
+            var num = random(20, 300);
+
+
+
+            svg.append("circle")
+                .attr({
+                    "cx": 10 + num,
+                    "cy": 10 + 12 * i + 5,
+                    "r": 3,
+                    "fill": "red"
+                });
+            svg.append("text")
+                .attr({
+                    "x": 10 + num + 5,
+                    "y": 10 + 12 * i + 10,
+                    "font-size": 12,
+                })
+                .text(num);
+
+            svg.append("line")
+                .attr({
+                    "x1": 10 + last_num,
+                    "y1": 10 + 12 * (i - 1) + 5,
+                    "x2": 10 + num,
+                    "y2": 10 + 12 * i + 5,
+                    "stroke": "gray",
+                });
+
+            last_num = num;
+
+        }
+
+        svg.append("line")
+            .attr({
+                "x1": 10 + last_num,
+                "y1": 10 + 12 * (i - 1) + 5,
+                "x2": 10,
+                "y2": 10 + 12 * i + 5,
+                "stroke": "gray",
+            });
+    </script>
+
 
 
 </body>
